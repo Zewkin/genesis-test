@@ -35,9 +35,7 @@ const mutations = {
     state.columns = columns
   },
   editCell (state, { id, column, value }) {
-    console.log({ id, column, value })
     const row = state.rows.find(row => row._id == id)
-    console.log(row)
     row[column] = value
   }
 }
