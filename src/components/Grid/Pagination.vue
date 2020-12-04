@@ -16,7 +16,7 @@ export default {
     totalRows: Number
   },
   computed: {
-    pages: function () {
+    pages () {
       return Math.ceil(this.totalRows / this.rowsPerPage)
     }
   },
