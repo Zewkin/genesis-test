@@ -2,7 +2,7 @@
   <div class="pagination">
     <ul>
       <li v-for='n in pages' :key='n'>
-        <a href="#" @click='setPage($event, n)' :class="[(n == page ? 'strong' : '')]">{{ n }}</a>
+        <a href="#" @click.prevent='setPage(n)' :class="[(n == page ? 'strong' : '')]">{{ n }}</a>
       </li>
     </ul>
   </div>
@@ -21,8 +21,7 @@ export default {
     }
   },
   methods: {
-    setPage ($event, page) {
-      $event.preventDefault()
+    setPage (page) {
       this.page = page
       this.$emit('setPage', page)
     }
