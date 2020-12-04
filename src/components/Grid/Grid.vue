@@ -48,7 +48,7 @@ export default {
     rowsPerPage: Number
   },
   computed: {
-    visibleColumns: function () {
+    visibleColumns () {
       const visibleColumns = []
       for (const column in this.enabledColumns) {
         if (this.enabledColumns[column]) {
@@ -57,7 +57,7 @@ export default {
       }
       return visibleColumns
     },
-    orderedRows: function () {
+    orderedRows () {
       return _.orderBy(this.rows, this.sorting.key, this.sorting.direction).slice((this.page - 1) * this.rowsPerPage, this.page * this.rowsPerPage)
     }
   },
@@ -111,7 +111,7 @@ export default {
     }
   },
   watch: {
-    columns: function (columns) {
+    columns (columns) {
       const enabledColumns = {}
       for (const column of Object.keys(columns)) {
         enabledColumns[column] = true

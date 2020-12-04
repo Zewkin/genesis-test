@@ -27,7 +27,6 @@ const mutations = {
       if (!item._id) {
         item._id = i + 1
       }
-      item.editMode = false
     })
     state.rows = rows
   },

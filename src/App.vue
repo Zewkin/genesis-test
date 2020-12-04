@@ -3,7 +3,7 @@
     <grid 
       :columns='columns'
       :rows='rows'
-      :rowsPerPage='20'
+      :rowsPerPage='15'
       @edit='editCell'
     />
   </div>
