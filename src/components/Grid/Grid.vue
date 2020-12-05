@@ -49,13 +49,7 @@ export default {
   },
   computed: {
     visibleColumns () {
-      const visibleColumns = []
-      for (const column in this.enabledColumns) {
-        if (this.enabledColumns[column]) {
-          visibleColumns.push(column)
-        }
-      }
-      return visibleColumns
+      return Object.keys(this.enabledColumns).filter(column => this.enabledColumns[column])
     },
     orderedRows () {
       return _.orderBy(this.rows, this.sorting.key, this.sorting.direction).slice((this.page - 1) * this.rowsPerPage, this.page * this.rowsPerPage)
