@@ -106,11 +106,10 @@ export default {
   },
   watch: {
     columns (columns) {
-      const enabledColumns = {}
-      for (const column of Object.keys(columns)) {
-        enabledColumns[column] = true
-      }
-      this.enabledColumns = enabledColumns
+      this.enabledColumns = Object.keys(columns).reduce((acc, cur) => {
+        acc[cur] = true;
+        return acc;
+      }, {})
     }
   }
 }
